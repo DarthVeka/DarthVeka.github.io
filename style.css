@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.map-container {
+    grid-area: map;
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+    border: 1px solid #000000;
+}
+
+.data-display {
+    grid-area: data-display;
+    /* display: block; */
+    margin-left: 5px;
+}
+
+.land {
+    fill: #cccccc;
+    fill-opacity: 1;
+    stroke:white;
+    stroke-opacity: 1;
+    stroke-width:0.5;
+    cursor: pointer;
+}
+
+.rt-1 {
+    fill: #afd1e3;
+}
+.rt-2 {
+    fill: #7fb6d2;
+}
+.rt-3 {
+    fill: #509bc2;
+}
+.rt-4 {
+    fill: #427f9f;
+}
+.rt-5 {
+    fill: #33637c;
+}
+
+.land:hover {
+    fill: #9F0000;
+}
+
+.selected {
+    fill: #590000;
+}
+
+.selected:hover {
+    fill: rgba(112, 0, 0, 0.60);
+}
+
+.btn {
+    background-color: #cccccc;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.input-area {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-blue {
+    background-color: rgb(80, 151, 252);    
+}
+
+#compare {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.generated-data {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+    grid-auto-rows: minmax(50px, 110px);
+}
+
+.dynamic-region img {
+    height: 100%;
+    cursor: pointer;
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltipTxt {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltipTxt {
+    visibility: visible;
+    text-transform: uppercase;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 11px;
+}
+
+
+/* AUTOCOMPLETE */
+.typeahead {
+    width: 300px;
+    height: 20px;
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 20px;
+    border: 2px solid #ccc;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    outline: none;
+}
+
+#custom-templates .empty-message {
+    padding: 5px 10px;    
+    text-align: center;
+}
+
+.tt-menu {
+    width: 300px;
+    margin: 12px 0;
+    padding: 8px 12px;
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+/* AUTOCOMPLETE END*/
+
+#loading {
+    display: none;
+    background-color: rgba(255,255,255,0.7);
+    position: absolute;
+    z-index: +100 !important;
+    width: 100%;
+    height: 100%;
+  }
+  
+#loading img {
+    position: relative;
+    top: 40%;
+    left: 40%;
+}
+
+#chart-display {
+    grid-area: chart;
+    display: block; 
+    /* max-height: 600px;
+    max-width: 800px; */
+}
+
+.wrapper {
+    padding-top: 5px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;    
+    grid-template-areas:
+        "data-display"
+        "map"
+        "chart";
+    align-items: top;
+    justify-items: center;
+    
+}
+
+@media only screen and (min-width: 768px) {
+    .wrapper {
+        grid-template-columns: 1fr 1fr 3fr 1fr;
+        grid-template-areas:
+            ". map data-display ."
+            ". chart chart .";
+            justify-items: stretch;
+    }
+    
+}
